@@ -12,7 +12,8 @@ import java.util.Arrays;
 public class TestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TestApplication.class, args);
+        System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆   RoronoaZoro丶小王瑞   ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+        ApplicationContext applicationContext = SpringApplication.run(TestApplication.class, args);
     }
 
     /**
@@ -23,7 +24,7 @@ public class TestApplication {
      * @param applicationContext
      * @return
      */
-    @Bean
+    /*@Bean
     public CommandLineRunner commandLineRunner(ApplicationContext applicationContext) {
         return args -> {
             System.out.println("Let's inspect the beans provided by Spring Boot:");
@@ -33,5 +34,5 @@ public class TestApplication {
                 System.out.println(beanName);
             }
         };
-    }
+    }*/
 }
