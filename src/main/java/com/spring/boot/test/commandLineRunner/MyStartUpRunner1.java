@@ -2,6 +2,7 @@ package com.spring.boot.test.commandLineRunner;
 
 import com.spring.boot.test.springUtil.SpringContextUtil;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -14,12 +15,16 @@ import java.util.Arrays;
  * 在Spring Boot中为CommandLineRunner接口
  * <p>
  * 执行时机为容器启动完成的时候
+ *
+ * 多个MyStartUpRunner时可配置执行顺序
  */
 @Component
-public class MyStartUpRunner implements CommandLineRunner {
+@Order(value = 2)
+public class MyStartUpRunner1 implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  测试CommandLineRunner");
         System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  服务启动执行，输出Spring实例化了哪些Bean  ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
         System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  ApplicationContext:  " + SpringContextUtil.getApplicationContext());
         String[] beanNames = SpringContextUtil.getApplicationContext().getBeanDefinitionNames();
