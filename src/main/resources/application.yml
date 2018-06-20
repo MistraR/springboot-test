@@ -1,3 +1,5 @@
+my:
+  name: RoronoaZoro丶小王瑞
 server:
   port: 8080
   # 文件上传临时目录
