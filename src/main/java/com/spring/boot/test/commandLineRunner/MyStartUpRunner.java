@@ -21,7 +21,7 @@ public class MyStartUpRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  服务启动执行，输出Spring实例化了哪些Bean  ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
-        System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  SpringContextUtil.getApplicationContext():  " + SpringContextUtil.getApplicationContext());
+        System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  ApplicationContext:  " + SpringContextUtil.getApplicationContext());
         String[] beanNames = SpringContextUtil.getApplicationContext().getBeanDefinitionNames();
         Arrays.sort(beanNames);
         for (String beanName : beanNames) {
