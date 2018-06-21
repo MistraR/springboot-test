@@ -30,4 +30,9 @@ public class ScheduledTasks {
     public void reportCurrentTime() {
         log.info("The time is now {}", dateFormat.format(new Date()));
     }
+
+    @Scheduled(cron = "0 28 11 ? * *")
+    public void fixTimeExecution(){
+        System.out.println("定时任务 cron 表达式测试");
+    }
 }
