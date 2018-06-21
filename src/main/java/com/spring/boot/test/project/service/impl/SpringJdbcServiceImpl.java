@@ -30,12 +30,12 @@ public class SpringJdbcServiceImpl implements SpringJdbcService {
     }
 
     @Override
-    public int delete(int id) {
+    public int delete(Long id) {
         return springJdbcDao.delete(id);
     }
 
     @Override
-    public SpringJdbcEntity findAccountById(int id) {
+    public SpringJdbcEntity findAccountById(Long id) {
         return springJdbcDao.findAccountById(id);
     }
 

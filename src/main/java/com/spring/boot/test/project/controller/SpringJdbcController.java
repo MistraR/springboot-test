@@ -3,6 +3,7 @@ package com.spring.boot.test.project.controller;
 import com.spring.boot.test.project.entity.SpringJdbcEntity;
 import com.spring.boot.test.project.service.SpringJdbcService;
 import com.spring.boot.test.util.web.annotation.AddUrl;
+import com.spring.boot.test.util.web.annotation.DeleteUrl;
 import com.spring.boot.test.util.web.annotation.GetOneUrl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,7 +33,7 @@ public class SpringJdbcController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ApiOperation("获取单个")
-    public SpringJdbcEntity getAccountById(@PathVariable("id") int id) {
+    public SpringJdbcEntity getAccountById(@PathVariable("id") Long id) {
         return springJdbcService.findAccountById(id);
     }
 
@@ -65,5 +66,17 @@ public class SpringJdbcController {
         } else {
             return "fail";
         }
+    }
+
+    @DeleteUrl
+    @ApiOperation("删除")
+    public String delete(@RequestParam(value = "id") Long id) {
+        int t = springJdbcService.delete(id);
+        if (t == 1) {
+            return "success";
+        } else {
+            return "fail";
+        }
+
     }
 }

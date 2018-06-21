@@ -15,9 +15,9 @@ public interface SpringJdbcService {
 
     int update(SpringJdbcEntity springJdbcEntity);
 
-    int delete(int id);
+    int delete(Long id);
 
-    SpringJdbcEntity findAccountById(int id);
+    SpringJdbcEntity findAccountById(Long id);
 
     List<SpringJdbcEntity> findAccountList();
 }

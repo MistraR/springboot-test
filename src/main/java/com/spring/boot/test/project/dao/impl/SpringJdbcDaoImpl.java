@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,18 +27,19 @@ public class SpringJdbcDaoImpl implements SpringJdbcDao {
     }
 
     @Override
+    @Transactional
     public int update(SpringJdbcEntity springJdbcEntity) {
         return jdbcTemplate.update("UPDATE  springjdbc SET NAME=? ,money=? WHERE id=?",
                 springJdbcEntity.getName(), springJdbcEntity.getMoney(), springJdbcEntity.getId());
     }
 
     @Override
-    public int delete(int id) {
+    public int delete(Long id) {
         return jdbcTemplate.update("DELETE from springjdbc where id=?", id);
     }
 
     @Override
-    public SpringJdbcEntity findAccountById(int id) {
+    public SpringJdbcEntity findAccountById(Long id) {
         List<SpringJdbcEntity> list = jdbcTemplate.query("select * from springjdbc where id = ?", new Object[]{id}, new BeanPropertyRowMapper(SpringJdbcEntity.class));
         if (list != null && list.size() > 0) {
             SpringJdbcEntity springJdbcEntity = list.get(0);

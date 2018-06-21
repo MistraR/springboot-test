@@ -21,7 +21,7 @@ pojo:
 spring:
   # 不同环境配置文件切换 dev  prod  test
   profiles:
-    active: dev
+    active: prod
   jackson:
     serialization:
       fail-on-empty-beans: false

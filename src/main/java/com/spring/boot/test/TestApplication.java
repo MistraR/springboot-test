@@ -8,11 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.Arrays;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ConfigurationParameter.class,ConfigurationParameter2.class})
+//开启调度任务
+@EnableScheduling
 public class TestApplication {
 
     public static void main(String[] args) {
