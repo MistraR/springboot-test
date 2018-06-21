@@ -1,5 +1,16 @@
+# 自定义属性  project\controller\MistraController.java
 my:
+  name:  RoronoaZoro丶小王瑞
+# 将自定义属性复制给实体类,每次启动项目时赋值一次  project\entity\ConfigurationParameter.java
+pojo:
   name: RoronoaZoro丶小王瑞
+  age: 18
+  number:  ${random.int}
+  uuid : ${random.uuid}
+  max: ${random.int(10)}
+  value: ${random.value}
+  describe: 你的名字${pojo.name},非得等到自己开始讨厌自己了,才懂得怎么诚实面对自己想要的。
+
 server:
   port: 8080
   # 文件上传临时目录

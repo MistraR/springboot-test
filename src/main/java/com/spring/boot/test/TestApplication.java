@@ -1,19 +1,23 @@
 package com.spring.boot.test;
 
+import com.spring.boot.test.project.entity.ConfigurationParameter;
+import com.spring.boot.test.project.entity.ConfigurationParameter2;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 
 @SpringBootApplication
+@EnableConfigurationProperties({ConfigurationParameter.class,ConfigurationParameter2.class})
 public class TestApplication {
 
     public static void main(String[] args) {
         System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆   RoronoaZoro丶小王瑞   ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
-        ApplicationContext applicationContext = SpringApplication.run(TestApplication.class, args);
+        SpringApplication.run(TestApplication.class, args);
     }
 
     /**
