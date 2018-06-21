@@ -5,19 +5,23 @@ my:
 pojo:
   name: RoronoaZoro丶小王瑞
   age: 18
+
   number:  ${random.int}
   uuid : ${random.uuid}
   max: ${random.int(10)}
   value: ${random.value}
   describe: 你的名字${pojo.name},非得等到自己开始讨厌自己了,才懂得怎么诚实面对自己想要的。
 
-server:
-  port: 8080
+#server:
+  #port: 8080
   # 文件上传临时目录
   tomcat:
         basedir: E:/upload/temp
 # 数据库访问配置,主数据源，默认的
 spring:
+  # 不同环境配置文件切换 dev  prod  test
+  profiles:
+    active: dev
   jackson:
     serialization:
       fail-on-empty-beans: false
