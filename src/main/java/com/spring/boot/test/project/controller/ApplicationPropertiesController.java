@@ -29,7 +29,7 @@ public class ApplicationPropertiesController {
     @Value("${my.name}")
     private String myName;
 
-    @ApiOperation("测试接口")
+    @ApiOperation("配置文件参数注入")
     @GetMapping("/test")
     public String test() {
         return myName;

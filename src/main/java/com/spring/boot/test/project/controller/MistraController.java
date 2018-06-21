@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/mistra")
 public class MistraController {
 
+    @ApiOperation("启动测试")
+    @GetMapping("/test")
+    public String test() {
+        return "☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  项目启动成功  ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆";
+    }
 
 
 
