@@ -14,13 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 public class MyInterceptor extends HandlerInterceptorAdapter {
 
     /**
-     * 请求发生前执行
+     * 请求处理前执行
      * @param request
      * @param response
      * @param handler
      * @return
      */
     @Override
+
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         long startTime = System.currentTimeMillis();
         request.setAttribute("startTime", startTime);

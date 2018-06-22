@@ -12,7 +12,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.Arrays;
 
-@SpringBootApplication
+/**
+ * @SpringBootApplication 包含3个注解
+ * 1: @EnableAutoConfiguration 根据类路径中的jar包依赖为当前项目进行自动配置
+ * 2: @SpringBootConfiguration 继承自@Configuration，二者功能也一致，标注当前类是配置类
+ * 3: @ComponentScan 注解会自动扫描指定包下的全部标有 @Component注解 的类，并注册成bean
+ */
+@SpringBootApplication(scanBasePackages = "com.spring.boot.test")
 @EnableConfigurationProperties({ConfigurationParameter.class,ConfigurationParameter2.class})
 //开启调度任务
 @EnableScheduling

@@ -1,5 +1,6 @@
 package com.spring.boot.test.springMVC;
 
+import com.spring.boot.test.interceptor.MyInterceptor;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,6 +18,11 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan("com.spring.boot.test.springMVC")
 public class MyMvcConfig implements WebMvcConfigurer {
+
+    @Bean
+    public MyInterceptor myInterceptor(){
+        return new MyInterceptor();
+    }
 
     @Bean
     public InternalResourceViewResolver viewResolver() {
@@ -37,5 +43,14 @@ public class MyMvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
         resourceHandlerRegistry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+    }
+
+    /**
+     * 配置拦截器
+     * @param registry
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(myInterceptor());
     }
 }
