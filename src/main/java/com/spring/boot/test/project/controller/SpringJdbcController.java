@@ -53,6 +53,17 @@ public class SpringJdbcController {
         }
     }
 
+    @RequestMapping(value = "/requestBody", method = RequestMethod.PUT)
+    @ApiOperation("更新---RequestBody限定请求参数格式")
+    public String updateAccount(@RequestBody SpringJdbcEntity springJdbcEntity) {
+        int t = springJdbcService.update(springJdbcEntity);
+        if (t == 1) {
+            return springJdbcEntity.toString();
+        } else {
+            return "fail";
+        }
+    }
+
     @AddUrl
     @ApiOperation("新增")
     public String postAccount(@RequestParam(value = "name") String name,

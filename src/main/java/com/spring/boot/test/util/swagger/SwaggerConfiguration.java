@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.spring.boot.test.project"))
+                .apis(RequestHandlerSelectors.basePackage("com.spring.boot.test"))
                 .paths(PathSelectors.any())
                 .build();
     }
