@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
  * Describe: 配置文件不管用.properties还是.yml格式的，前缀必须要唯一
  * .properties格式的属性注入到实体类时，中文会是乱码
  * 要用自定义的配置文件注入属性时用.properties格式的配置文件，自定义的.yml格式的配置文件会注入失败，application.yml就没有这个问题
+ * @PropertySource 只支持.properties文件yml不行
  */
 @Data
 @Component
