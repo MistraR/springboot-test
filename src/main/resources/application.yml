@@ -17,11 +17,13 @@ pojo:
   # 文件上传临时目录
   tomcat:
         basedir: E:/upload/temp
+#查看当前项目中已启用和未启用的自动配置的报告
+debug: true
 # 数据库访问配置,主数据源，默认的
 spring:
   # 不同环境配置文件切换 dev  prod  test
   profiles:
-    active: prod
+    active: dev
   jackson:
     serialization:
       fail-on-empty-beans: false

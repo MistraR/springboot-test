@@ -1,7 +1,10 @@
 package com.spring.boot.test;
 
+import com.mistra.mistrastarter.MistraService;
 import com.spring.boot.test.project.entity.ConfigurationParameter;
 import com.spring.boot.test.project.entity.ConfigurationParameter2;
+import com.spring.boot.test.springUtil.SpringContextUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +12,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 
@@ -19,7 +23,7 @@ import java.util.Arrays;
  * 3: @ComponentScan 注解会自动扫描指定包下的全部标有 @Component注解 的类，并注册成bean
  */
 @SpringBootApplication(scanBasePackages = "com.spring.boot.test")
-@EnableConfigurationProperties({ConfigurationParameter.class,ConfigurationParameter2.class})
+@EnableConfigurationProperties({ConfigurationParameter.class, ConfigurationParameter2.class})
 //开启调度任务
 @EnableScheduling
 public class TestApplication {
