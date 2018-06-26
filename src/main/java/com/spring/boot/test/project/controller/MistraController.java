@@ -1,6 +1,7 @@
 package com.spring.boot.test.project.controller;
 
 import com.spring.boot.test.project.entity.ConfigurationParameter;
+import com.spring.boot.test.project.entity.SpringJdbcEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +18,21 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Api("MistraController")
 @RestController
-@RequestMapping("/mistra")
+@RequestMapping(value = "/mistra")
 public class MistraController {
 
     @ApiOperation("启动测试")
-    @GetMapping("/test")
+    @GetMapping(value = "/test")
     public String test() {
-        return "☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  项目启动成功  ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆";
+        return "☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  项目启动成功1  ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆";
     }
 
-
-
+    @ApiOperation("返回实体类")
+    @GetMapping("/entity")
+    public SpringJdbcEntity entity(){
+        SpringJdbcEntity springJdbcEntity = new SpringJdbcEntity();
+        springJdbcEntity.setMoney("2500");
+        springJdbcEntity.setName("项目启动成功");
+        return springJdbcEntity;
+    }
 }

@@ -1,4 +1,10 @@
 server:
   port: 8080
   servlet:
-    context-path: /mistra
+      context-path: /mistra
+  tomcat:
+    uri-encoding: UTF-8
+    # 文件上传临时目录
+    basedir: E:/upload/temp
+mistra:
+  name: 罗罗诺亚索隆

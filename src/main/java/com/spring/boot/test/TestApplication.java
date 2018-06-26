@@ -24,7 +24,7 @@ import java.util.Arrays;
  */
 @SpringBootApplication(scanBasePackages = "com.spring.boot.test")
 @EnableConfigurationProperties({ConfigurationParameter.class, ConfigurationParameter2.class})
-//开启调度任务
+//开启定时任务
 @EnableScheduling
 public class TestApplication {
 
