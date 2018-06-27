@@ -35,7 +35,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/classes/views/");
-        viewResolver.setSuffix(".jsp");
+        viewResolver.setSuffix(".html");
         viewResolver.setViewClass(JstlView.class);
         return viewResolver;
     }
@@ -43,6 +43,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     /**
      * 配置静态资源访问
      * addResourceHandler 暴露的访问地址
+     *
      * addResourceLocations 文件存放位置
      * http://localhost:8080/static/1.jpg
      * @param resourceHandlerRegistry

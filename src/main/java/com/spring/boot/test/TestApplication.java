@@ -9,9 +9,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
@@ -26,6 +28,10 @@ import java.util.Arrays;
 @EnableConfigurationProperties({ConfigurationParameter.class, ConfigurationParameter2.class})
 //开启定时任务
 @EnableScheduling
+//开启事务支持   --可不写
+@EnableTransactionManagement
+//开启缓存
+@EnableCaching
 public class TestApplication {
 
     public static void main(String[] args) {

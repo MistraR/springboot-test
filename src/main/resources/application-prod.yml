@@ -1,7 +1,7 @@
 server:
   port: 8080
-  servlet:
-      context-path: /mistra
+  #servlet:
+      #context-path: /mistra
   tomcat:
     uri-encoding: UTF-8
     # 文件上传临时目录
