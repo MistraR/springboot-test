@@ -1,5 +1,7 @@
 package com.spring.boot.test.cache.entity;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +12,7 @@ import javax.persistence.Id;
  * Describe:
  */
 @Entity
+@Data
 public class CacheEntity {
 
     @Id
@@ -17,6 +20,8 @@ public class CacheEntity {
     private Long id;
 
     private String name;
+
+    private Integer age;
 
     private String note;
 }

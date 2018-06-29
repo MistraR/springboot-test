@@ -22,7 +22,7 @@ import java.util.List;
  * Describe:
  */
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc
 @ComponentScan("com.spring.boot.test.springMVC")
 public class MyMvcConfig implements WebMvcConfigurer {
 
